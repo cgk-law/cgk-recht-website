@@ -39,6 +39,18 @@ export default function Startseite() {
         <div
           className="relative z-10 pb-20 max-w-[980px] mx-auto w-full"
         >
+          <p
+            style={{
+              color: "rgba(0,0,0,0.35)",
+              fontSize: "11px",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              fontWeight: 500,
+              marginBottom: "0.75rem",
+            }}
+          >
+            CGK Rechtsanwaltskanzlei
+          </p>
           <h1
             className="mb-1"
             style={{
