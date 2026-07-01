@@ -67,13 +67,13 @@ export default function Startseite() {
             <span style={{ fontWeight: 600 }}>Carolin Gerring-Keil</span>
           </h1>
           <p
-            className="mb-6"
             style={{
               color: "rgba(0,0,0,0.45)",
               fontSize: "12px",
               letterSpacing: "0.2em",
               textTransform: "uppercase",
               fontWeight: 500,
+              marginBottom: "2rem",
             }}
           >
             Rechtsanwältin • Kanzleiinhaberin
