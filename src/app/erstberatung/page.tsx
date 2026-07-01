@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -61,45 +62,59 @@ export default function ErstberatungPage() {
         className="py-20"
         style={{ paddingLeft: "var(--page-x)", paddingRight: "var(--page-x)" }}
       >
-        <div className="max-w-[980px] mx-auto">
-          <p
-            style={{
-              fontSize: "12px",
-              letterSpacing: "0.2em",
-              textTransform: "uppercase",
-              fontWeight: 500,
-              color: "#b0b0b0",
-              marginBottom: "1rem",
-            }}
-          >
-            Ihr erster Schritt
-          </p>
-          <h1 style={{ marginBottom: "1.5rem" }}>Erstberatung</h1>
-          <div style={{ maxWidth: "600px", display: "flex", flexDirection: "column", gap: "1rem" }}>
+        <div className="max-w-[980px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+          {/* Text */}
+          <div>
             <p
               style={{
-                fontSize: "15px",
-                lineHeight: "27px",
-                color: "#3a3a3a",
-                fontWeight: 300,
+                fontSize: "12px",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                color: "#b0b0b0",
+                marginBottom: "1rem",
               }}
             >
-              Ich freue mich sehr, dass Sie Interesse an einer Erstberatung in
-              meiner Kanzlei haben.
+              Ihr erster Schritt
             </p>
-            <p
-              style={{
-                fontSize: "15px",
-                lineHeight: "27px",
-                color: "#3a3a3a",
-                fontWeight: 300,
-              }}
-            >
-              Die Erstberatung bildet die Grundlage für die weitere rechtliche
-              Einschätzung Ihres Anliegens. Ziel der Erstberatung ist es, Ihnen
-              Orientierung zu geben und eine fundierte Entscheidungsgrundlage
-              für die nächsten Schritte zu schaffen.
-            </p>
+            <h1 style={{ marginBottom: "1.5rem" }}>Erstberatung</h1>
+            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+              <p
+                style={{
+                  fontSize: "15px",
+                  lineHeight: "27px",
+                  color: "#3a3a3a",
+                  fontWeight: 300,
+                }}
+              >
+                Ich freue mich sehr, dass Sie Interesse an einer Erstberatung in
+                meiner Kanzlei haben.
+              </p>
+              <p
+                style={{
+                  fontSize: "15px",
+                  lineHeight: "27px",
+                  color: "#3a3a3a",
+                  fontWeight: 300,
+                }}
+              >
+                Die Erstberatung bildet die Grundlage für die weitere rechtliche
+                Einschätzung Ihres Anliegens. Ziel der Erstberatung ist es, Ihnen
+                Orientierung zu geben und eine fundierte Entscheidungsgrundlage
+                für die nächsten Schritte zu schaffen.
+              </p>
+            </div>
+          </div>
+
+          {/* Bild */}
+          <div className="w-full relative" style={{ aspectRatio: "3/4" }}>
+            <Image
+              src="/images/carolin-gerring-keil-03.jpeg"
+              alt="Carolin Gerring-Keil"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
       </section>
