@@ -59,6 +59,7 @@ export default function Startseite() {
               letterSpacing: "0.04em",
               color: "#1a1a1a",
               lineHeight: 1.4,
+              marginBottom: 0,
             }}
           >
             Erbrecht · Familienrecht
