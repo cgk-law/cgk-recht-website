@@ -25,24 +25,24 @@ const bereiche = [
   },
 ];
 
-const vorgehensweisen = [
+const unterstuetzung = [
   {
-    title: "Beratung",
-    desc: "Eine umfassende Erstberatung legt die Grundlage für alle weiteren Schritte. Ich analysiere Ihre Situation und erläutere Ihnen Ihre rechtlichen Möglichkeiten.",
+    titel: "Beratung",
+    text: "Die Erstberatung bildet die Grundlage für die weitere Bearbeitung Ihres Anliegens. Ich analysiere Ihre Situation, erläutere Ihnen verständlich Ihre rechtlichen Möglichkeiten und zeige Ihnen die nächsten sinnvollen Schritte auf.",
   },
   {
-    title: "Vertragsgestaltung",
-    desc: "Ich entwerfe und prüfe Testamente, Erbverträge, Eheverträge und andere Dokumente – präzise formuliert und auf Ihre individuelle Situation zugeschnitten.",
+    titel: "Vertragsgestaltung",
+    text: "Ich entwerfe und prüfe Testamente, Eheverträge und weitere rechtliche Vereinbarungen – präzise formuliert und auf Ihre persönliche Situation abgestimmt. Ziel ist es, klare und rechtssichere Regelungen zu schaffen, die Ihre Interessen langfristig absichern.",
   },
   {
-    title: "Außergerichtliche und gerichtliche Vertretung",
-    desc: "Ob Verhandlung am runden Tisch oder vor Gericht: Ich vertrete Ihre Interessen konsequent und nehme dafür auch weite Wege in Kauf.",
+    titel: "Außergerichtliche und gerichtliche Vertretung",
+    text: "Ich vertrete Ihre Interessen außergerichtlich und gerichtlich mit Engagement und Sorgfalt. Dabei behalte ich Ihre persönlichen und wirtschaftlichen Ziele stets im Blick und setze mich konsequent für Ihre Interessen ein.",
   },
 ];
 
 export default function LeistungenPage() {
   return (
-    <div style={{ paddingLeft: "124px", paddingRight: "124px" }} className="py-20">
+    <div style={{ paddingLeft: "var(--page-x)", paddingRight: "var(--page-x)" }} className="py-20">
       <div className="max-w-[980px] mx-auto">
         <h1>Leistungen</h1>
         <p className="mb-16" style={{ maxWidth: "640px" }}>
@@ -56,14 +56,11 @@ export default function LeistungenPage() {
         {bereiche.map((item, i) => (
           <div
             key={item.label}
+            className="flex flex-col gap-4 md:grid md:items-center md:[grid-template-columns:60px_1fr_auto] md:gap-8"
             style={{
               borderTop: "1px solid #e0e0e0",
               paddingTop: "2rem",
               paddingBottom: "2rem",
-              display: "grid",
-              gridTemplateColumns: "60px 1fr auto",
-              gap: "2rem",
-              alignItems: "center",
             }}
           >
             <span style={{ fontSize: "12px", color: "#b0b0b0", letterSpacing: "0.15em", fontWeight: 500 }}>
@@ -96,28 +93,32 @@ export default function LeistungenPage() {
         ))}
         <div style={{ borderTop: "1px solid #e0e0e0", marginBottom: "5rem" }} />
 
-        {/* Vorgehensweisen */}
-        <div className="mb-16">
-          <h2 className="mb-8">Meine Vorgehensweisen</h2>
-          <div className="grid md:grid-cols-3 gap-10">
-            {vorgehensweisen.map((v) => (
-              <div key={v.title}>
-                <p
-                  className="mb-3"
-                  style={{
-                    fontWeight: 600,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.08em",
-                    fontSize: "13px",
-                    color: "#797979",
-                  }}
-                >
-                  {v.title}
-                </p>
-                <p style={{ fontSize: "15px", lineHeight: "26px" }}>{v.desc}</p>
-              </div>
-            ))}
-          </div>
+        {/* Wie ich Sie unterstütze */}
+        <h2 className="mb-6">Wie ich Sie unterstütze</h2>
+        <div className="mb-16 grid grid-cols-1 md:grid-cols-3 gap-0" style={{ background: "#F8F7F7" }}>
+          {unterstuetzung.map((item, i) => (
+            <div
+              key={item.titel}
+              className={i > 0 ? "flex flex-col border-t border-[#e0e0e0] md:border-t-0 md:border-l" : "flex flex-col"}
+              style={{ padding: "2rem" }}
+            >
+              <p
+                style={{
+                  fontSize: "12px",
+                  fontWeight: 500,
+                  color: "#2C5F3A",
+                  letterSpacing: "0.15em",
+                  textTransform: "uppercase",
+                  marginBottom: "1rem",
+                }}
+              >
+                {item.titel}
+              </p>
+              <p style={{ fontSize: "15px", lineHeight: "27px", color: "#3a3a3a", fontWeight: 300 }}>
+                {item.text}
+              </p>
+            </div>
+          ))}
         </div>
 
         {/* CTA */}

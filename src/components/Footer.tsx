@@ -6,8 +6,8 @@ export default function Footer() {
   return (
     <footer className="mt-16 border-t border-[#797979]">
       <div
-        className="py-5 flex items-center justify-between"
-        style={{ paddingLeft: "124px", paddingRight: "124px" }}
+        className="py-5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between"
+        style={{ paddingLeft: "var(--page-x)", paddingRight: "var(--page-x)" }}
       >
         <div className="flex items-center gap-4">
           <Image

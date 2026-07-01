@@ -51,7 +51,7 @@ const schwerpunkte = [
 
 export default function FamilienrechtPage() {
   return (
-    <div style={{ paddingLeft: "124px", paddingRight: "124px" }} className="py-20">
+    <div style={{ paddingLeft: "var(--page-x)", paddingRight: "var(--page-x)" }} className="py-20">
       <div className="max-w-[980px] mx-auto">
 
         {/* Zurück-Link */}

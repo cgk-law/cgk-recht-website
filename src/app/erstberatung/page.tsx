@@ -59,7 +59,7 @@ export default function ErstberatungPage() {
       {/* Page Header */}
       <section
         className="py-20"
-        style={{ paddingLeft: "124px", paddingRight: "124px" }}
+        style={{ paddingLeft: "var(--page-x)", paddingRight: "var(--page-x)" }}
       >
         <div className="max-w-[980px] mx-auto">
           <p
@@ -107,7 +107,7 @@ export default function ErstberatungPage() {
       {/* Was Sie erwartet */}
       <section
         className="py-16"
-        style={{ background: "#F8F7F7", paddingLeft: "124px", paddingRight: "124px" }}
+        style={{ background: "#F8F7F7", paddingLeft: "var(--page-x)", paddingRight: "var(--page-x)" }}
       >
         <div className="max-w-[980px] mx-auto">
           <h2 style={{ marginBottom: "2.5rem" }}>Was Sie erwartet</h2>
@@ -153,7 +153,7 @@ export default function ErstberatungPage() {
       {/* Ablauf */}
       <section
         className="py-20"
-        style={{ paddingLeft: "124px", paddingRight: "124px" }}
+        style={{ paddingLeft: "var(--page-x)", paddingRight: "var(--page-x)" }}
       >
         <div className="max-w-[980px] mx-auto">
           <h2 style={{ marginBottom: "3.5rem" }}>So läuft es ab</h2>
@@ -208,56 +208,10 @@ export default function ErstberatungPage() {
         </div>
       </section>
 
-      {/* Leistungen im Mandat */}
-      <section
-        className="py-16"
-        style={{ paddingLeft: "124px", paddingRight: "124px" }}
-      >
-        <div className="max-w-[980px] mx-auto">
-          <h2 style={{ marginBottom: "2.5rem" }}>Wie ich Sie unterstütze</h2>
-          <div className="flex flex-col">
-            {[
-              {
-                titel: "Beratung",
-                text: "Die Erstberatung bildet die Grundlage für die weitere Bearbeitung Ihres Anliegens. Ich analysiere Ihre Situation, erläutere Ihnen verständlich Ihre rechtlichen Möglichkeiten und zeige Ihnen die nächsten sinnvollen Schritte auf.",
-              },
-              {
-                titel: "Vertragsgestaltung",
-                text: "Ich entwerfe und prüfe Testamente, Eheverträge und weitere rechtliche Vereinbarungen – präzise formuliert und auf Ihre persönliche Situation abgestimmt. Ziel ist es, klare und rechtssichere Regelungen zu schaffen, die Ihre Interessen langfristig absichern.",
-              },
-              {
-                titel: "Außergerichtliche und gerichtliche Vertretung",
-                text: "Ich vertrete Ihre Interessen außergerichtlich und gerichtlich mit Engagement und Sorgfalt. Dabei behalte ich Ihre persönlichen und wirtschaftlichen Ziele stets im Blick und setze mich konsequent für Ihre Interessen ein.",
-              },
-            ].map((item) => (
-              <div
-                key={item.titel}
-                style={{
-                  borderTop: "1px solid #e0e0e0",
-                  paddingTop: "1.5rem",
-                  paddingBottom: "1.5rem",
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: "2rem",
-                }}
-              >
-                <p style={{ fontSize: "15px", fontWeight: 500, color: "#2a2a2a", lineHeight: "26px" }}>
-                  {item.titel}
-                </p>
-                <p style={{ fontSize: "15px", lineHeight: "26px", color: "#797979" }}>
-                  {item.text}
-                </p>
-              </div>
-            ))}
-            <div style={{ borderTop: "1px solid #e0e0e0" }} />
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section
         className="py-16"
-        style={{ background: "#F8F7F7", paddingLeft: "124px", paddingRight: "124px" }}
+        style={{ background: "#F8F7F7", paddingLeft: "var(--page-x)", paddingRight: "var(--page-x)" }}
       >
         <div className="max-w-[980px] mx-auto">
           <h2 style={{ marginBottom: "2.5rem" }}>Häufige Fragen</h2>
@@ -265,13 +219,11 @@ export default function ErstberatungPage() {
             {faqs.map((item, i) => (
               <div
                 key={i}
+                className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8"
                 style={{
                   borderTop: "1px solid #e0e0e0",
                   paddingTop: "1.5rem",
                   paddingBottom: "1.5rem",
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: "2rem",
                 }}
               >
                 <p
@@ -297,7 +249,7 @@ export default function ErstberatungPage() {
       {/* CTA */}
       <section
         className="py-20"
-        style={{ paddingLeft: "124px", paddingRight: "124px" }}
+        style={{ paddingLeft: "var(--page-x)", paddingRight: "var(--page-x)" }}
       >
         <div className="max-w-[980px] mx-auto">
           <div className="py-12 px-10" style={{ background: "#F8F7F7" }}>

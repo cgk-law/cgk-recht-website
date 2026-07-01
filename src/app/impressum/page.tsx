@@ -13,21 +13,17 @@ const sectionTitle = (text: string) => (
 const row = (label: string, value: React.ReactNode) => (
   <div
     key={label}
-    style={{
-      display: "grid",
-      gridTemplateColumns: "220px 1fr",
-      gap: "1rem",
-      marginBottom: "0.35rem",
-    }}
+    className="grid grid-cols-1 md:[grid-template-columns:180px_1fr] md:gap-4"
+    style={{ marginBottom: "0.35rem" }}
   >
-    <span style={{ fontSize: "15px", color: "#b0b0b0", fontWeight: 300 }}>{label}</span>
+    <span style={{ fontSize: "12px", color: "#b0b0b0", fontWeight: 500, letterSpacing: "0.05em", textTransform: "uppercase" }}>{label}</span>
     <span style={{ fontSize: "15px", color: "#3a3a3a", fontWeight: 300 }}>{value}</span>
   </div>
 );
 
 export default function ImpressumPage() {
   return (
-    <div style={{ paddingLeft: "124px", paddingRight: "124px" }} className="py-20">
+    <div style={{ paddingLeft: "var(--page-x)", paddingRight: "var(--page-x)" }} className="py-20">
       <div style={{ maxWidth: "780px" }}>
         <h1>Impressum</h1>
 

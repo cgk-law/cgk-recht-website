@@ -22,7 +22,7 @@ export default function Navigation() {
     <header className="w-full bg-white relative z-50">
       <div
         className="flex items-center justify-between"
-        style={{ paddingLeft: "124px", paddingRight: "124px", paddingTop: "10px", paddingBottom: "10px" }}
+        style={{ paddingLeft: "var(--page-x)", paddingRight: "var(--page-x)", paddingTop: "10px", paddingBottom: "10px" }}
       >
         {/* Logo */}
         <Link href="/" className="block">
@@ -42,8 +42,8 @@ export default function Navigation() {
               key={link.href}
               href={link.href}
               className={cn(
-                "transition-colors duration-200",
-                pathname === link.href ? "text-[#2C5F3A]" : "text-[#797979] hover:text-[#2C5F3A]"
+                "transition-colors duration-200 hover:text-[#2C5F3A]",
+                pathname === link.href ? "text-[#2C5F3A]" : "text-[#797979]"
               )}
               style={{
                 fontSize: "15px",

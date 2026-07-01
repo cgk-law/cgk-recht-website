@@ -25,10 +25,10 @@ export default function Startseite() {
       {/* Hero */}
       <section
         className="relative w-full flex items-end"
-        style={{ minHeight: "85vh", paddingLeft: "124px", paddingRight: "124px" }}
+        style={{ minHeight: "85vh", paddingLeft: "var(--page-x)", paddingRight: "var(--page-x)" }}
       >
         <Image
-          src="/images/cgk-kanzlei-office.jpeg"
+          src="/images/zons-header.jpg"
           alt=""
           fill
           priority
@@ -76,6 +76,7 @@ export default function Startseite() {
             }}
           >
             Individuelle Beratung im Erb- und Familienrecht.
+            <br />
             Mit klarer Struktur, Empathie und einem sicheren Blick für das Wesentliche.
           </p>
           <Link
@@ -101,9 +102,9 @@ export default function Startseite() {
       {/* Einleitung */}
       <section
         className="py-20"
-        style={{ paddingLeft: "124px", paddingRight: "124px" }}
+        style={{ paddingLeft: "var(--page-x)", paddingRight: "var(--page-x)" }}
       >
-        <div className="max-w-[980px] mx-auto grid grid-cols-2 gap-20">
+        <div className="max-w-[980px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20">
           {/* Linke Spalte */}
           <div>
             {[
@@ -162,7 +163,7 @@ export default function Startseite() {
       {/* Leistungen Überblick */}
       <section
         className="py-20"
-        style={{ paddingLeft: "124px", paddingRight: "124px" }}
+        style={{ paddingLeft: "var(--page-x)", paddingRight: "var(--page-x)" }}
       >
         <div className="max-w-[980px] mx-auto">
           <h2>Meine Leistungen</h2>
@@ -172,14 +173,11 @@ export default function Startseite() {
           {quickLinks.map((item, i) => (
             <div
               key={item.label}
+              className="flex flex-col gap-4 md:grid md:items-center md:[grid-template-columns:60px_1fr_auto] md:gap-8"
               style={{
                 borderTop: "1px solid #e0e0e0",
                 paddingTop: "2rem",
                 paddingBottom: "2rem",
-                display: "grid",
-                gridTemplateColumns: "60px 1fr auto",
-                gap: "2rem",
-                alignItems: "center",
               }}
             >
               <span style={{ fontSize: "12px", color: "#b0b0b0", letterSpacing: "0.15em", fontWeight: 500 }}>
@@ -217,7 +215,7 @@ export default function Startseite() {
       {/* Persönlich & Digital */}
       <section
         className="py-16"
-        style={{ background: "#F8F7F7", paddingLeft: "124px", paddingRight: "124px" }}
+        style={{ background: "#F8F7F7", paddingLeft: "var(--page-x)", paddingRight: "var(--page-x)" }}
       >
         <div className="max-w-[980px] mx-auto">
           <h2 style={{ marginBottom: "1.5rem" }}>Persönlich und digital</h2>
@@ -238,7 +236,7 @@ export default function Startseite() {
       {/* Ablauf */}
       <section
         className="py-20"
-        style={{ paddingLeft: "124px", paddingRight: "124px" }}
+        style={{ paddingLeft: "var(--page-x)", paddingRight: "var(--page-x)" }}
       >
         <div className="max-w-[980px] mx-auto">
           <h2 style={{ marginBottom: "3.5rem" }}>So arbeiten wir zusammen</h2>
@@ -291,7 +289,7 @@ export default function Startseite() {
       {/* CTA */}
       <section
         className="py-20"
-        style={{ paddingLeft: "124px", paddingRight: "124px" }}
+        style={{ paddingLeft: "var(--page-x)", paddingRight: "var(--page-x)" }}
       >
         <div className="max-w-[980px] mx-auto">
           <div className="py-12 px-10" style={{ background: "#F8F7F7" }}>

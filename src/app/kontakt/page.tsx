@@ -71,7 +71,7 @@ export default function KontaktPage() {
   }
 
   return (
-    <div style={{ paddingLeft: "124px", paddingRight: "124px" }} className="py-20">
+    <div style={{ paddingLeft: "var(--page-x)", paddingRight: "var(--page-x)" }} className="py-20">
       <div className="max-w-[980px] mx-auto">
         <h1 className="mb-12">Kontakt</h1>
 
@@ -123,7 +123,7 @@ export default function KontaktPage() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-8">
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="vorname" style={labelStyle}>
                     Vorname *
@@ -156,7 +156,7 @@ export default function KontaktPage() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="email" style={labelStyle}>
                     E-Mail *

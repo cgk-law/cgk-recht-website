@@ -19,6 +19,16 @@
   --tracking-btn: 0.15em;
 }
 
+:root {
+  --page-x: 24px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --page-x: 124px;
+  }
+}
+
 html,
 body {
   background-color: #ffffff;
@@ -49,9 +59,16 @@ h2 {
   line-height: 1.4em;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+@layer base {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+header nav a:hover {
+  color: #2C5F3A;
+  transition: color 0.2s;
 }
 
 strong {
