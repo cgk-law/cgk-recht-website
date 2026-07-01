@@ -52,7 +52,6 @@ export default function Startseite() {
             CGK Rechtsanwaltskanzlei
           </p>
           <h1
-            className="mb-1"
             style={{
               fontSize: "clamp(22px, 3vw, 36px)",
               fontWeight: 300,
