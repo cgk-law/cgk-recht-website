@@ -7,6 +7,21 @@ Marketing website for "CGK Rechtsanwaltskanzlei" — Carolin Gerring-Keil, Recht
 **Production domain:** `https://www.cgk-recht.de`
 **GitHub repo:** `https://github.com/cgk-law/cgk-recht-website.git` (owned by the client, you are a collaborator)
 
+## Deployment
+
+Vercel Hobby Plan — GitHub Actions handles deployment automatically. **Do NOT manually trigger Vercel or use the deploy hook.**
+
+Push workflow (the only thing needed):
+```bash
+git add -A
+git commit -m "Beschreibung"
+git push origin main
+```
+
+Every push to `main` triggers `.github/workflows/deploy.yml` which deploys to Vercel via CLI token. This bypasses the Hobby Plan contributor restriction (direct GitHub integration is disconnected).
+
+**Do not reconnect the GitHub↔Vercel integration** — it will block deployments again since Torben is not the Vercel project owner.
+
 ---
 
 ## Tech Stack
