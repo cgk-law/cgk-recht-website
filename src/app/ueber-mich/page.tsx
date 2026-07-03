@@ -220,7 +220,7 @@ export default function UeberMichPage() {
               </p>
               <p style={{ fontSize: "15px", color: "#3a3a3a", fontWeight: 300 }}>Mörikestraße 5</p>
               <p style={{ fontSize: "15px", color: "#3a3a3a", fontWeight: 300, marginBottom: "1.25rem" }}>
-                41541 Dormagen-Zons
+                41541 Dormagen
               </p>
               {[
                 { label: "Telefon", value: "02133 / 6309228", href: "tel:+4921336309228" },

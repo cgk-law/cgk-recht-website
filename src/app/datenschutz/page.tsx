@@ -208,6 +208,35 @@ export default function DatenschutzPage() {
 
         <div className="border-t border-[#797979]/20 my-8" />
 
+        <h2 className="mb-4">Google Maps</h2>
+        <p className="mb-8">
+          Auf unserer Kontaktseite bieten wir die Möglichkeit, einen
+          Kartenausschnitt des Dienstes Google Maps einzublenden, betrieben
+          von Google Ireland Limited, Gordon House, Barrow Street, Dublin 4,
+          Irland. Die Karte wird beim Aufruf der Seite nicht automatisch
+          geladen, sondern erst, wenn Sie aktiv auf die Schaltfläche
+          „Karte laden&quot; klicken. Erst durch diesen Klick wird eine Verbindung zu
+          Servern von Google hergestellt und dabei Ihre IP-Adresse sowie ggf.
+          weitere technische Daten (z. B. Standortdaten, Browsertyp) an
+          Google übertragen; hierbei kann eine Übermittlung in die USA
+          erfolgen. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit.
+          a DSGVO, § 25 Abs. 1 TDDDG), die durch den Klick auf die
+          Schaltfläche erteilt wird. Weitere Informationen zur
+          Datenverarbeitung durch Google entnehmen Sie der
+          Datenschutzerklärung von Google unter{" "}
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-[#2C5F3A] transition-colors"
+          >
+            policies.google.com/privacy
+          </a>
+          .
+        </p>
+
+        <div className="border-t border-[#797979]/20 my-8" />
+
         <h2 className="mb-4">Anfrage per E-Mail oder Telefon</h2>
         <p className="mb-8">
           Wenn Sie uns per E-Mail oder Telefon kontaktieren, wird Ihre

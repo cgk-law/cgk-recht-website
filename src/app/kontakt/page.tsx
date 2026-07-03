@@ -30,6 +30,7 @@ export default function KontaktPage() {
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(false);
+  const [mapLoaded, setMapLoaded] = useState(false);
   const [form, setForm] = useState({
     vorname: "",
     nachname: "",
@@ -291,7 +292,64 @@ export default function KontaktPage() {
               Carolin Gerring-Keil · Rechtsanwältin und Kanzleiinhaberin
             </p>
             <p className="mb-1">Mörikestraße 5</p>
-            <p className="mb-8">41541 Dormagen-Zons</p>
+            <p className="mb-8">41541 Dormagen</p>
+
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                height: "280px",
+                marginBottom: "2rem",
+              }}
+            >
+              {mapLoaded ? (
+                <iframe
+                  src="https://www.google.com/maps?q=M%C3%B6rikestra%C3%9Fe+5,+41541+Dormagen&output=embed"
+                  title="Standort CGK Rechtsanwaltskanzlei"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  style={{ border: "none", width: "100%", height: "100%" }}
+                />
+              ) : (
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    background: "#F8F7F7",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    textAlign: "center",
+                    padding: "1.5rem",
+                  }}
+                >
+                  <p style={{ fontSize: "13px", color: "#797979", lineHeight: "20px", marginBottom: "1rem", maxWidth: "440px" }}>
+                    Beim Laden der Karte wird eine Verbindung zu Google-Servern
+                    hergestellt und Ihre IP-Adresse an Google übertragen.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setMapLoaded(true)}
+                    className="hover:text-[#2C5F3A] transition-colors duration-200"
+                    style={{
+                      border: "1px solid #797979",
+                      borderRadius: "5px",
+                      padding: "7px 20px",
+                      fontSize: "13px",
+                      letterSpacing: "0.1em",
+                      textTransform: "uppercase",
+                      color: "#797979",
+                      background: "transparent",
+                      cursor: "pointer",
+                      fontFamily: "inherit",
+                    }}
+                  >
+                    Karte laden
+                  </button>
+                </div>
+              )}
+            </div>
 
             <p className="mb-1">
               <a
@@ -317,7 +375,7 @@ export default function KontaktPage() {
                 kanzlei@cgk-recht.de
               </a>
             </p>
-            <p className="mb-12">
+            <p className="mb-1">
               <a
                 href="https://www.cgk-recht.de"
                 target="_blank"
@@ -325,6 +383,16 @@ export default function KontaktPage() {
                 className="hover:text-[#2C5F3A] transition-colors break-all"
               >
                 www.cgk-recht.de
+              </a>
+            </p>
+            <p className="mb-12">
+              <a
+                href="https://g.page/r/CfosMc00-Pd3EAE/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#2C5F3A] transition-colors"
+              >
+                Google-Bewertung abgeben
               </a>
             </p>
           </address>

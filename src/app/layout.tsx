@@ -67,6 +67,7 @@ const legalServiceSchema = {
   ],
   areaServed: ["Dormagen", "Neuss", "Düsseldorf", "Köln", "Rhein-Kreis Neuss"],
   priceRange: "€€",
+  sameAs: ["https://share.google/Dgfa6fjCGej5Xo53z"],
 };
 
 export default function RootLayout({
