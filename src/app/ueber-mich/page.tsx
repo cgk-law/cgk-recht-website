@@ -1,11 +1,22 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Über mich – CGK Rechtsanwaltskanzlei Dormagen",
   description:
     "Carolin Gerring-Keil, Rechtsanwältin für Erbrecht und Familienrecht in Dormagen. Persönliche Beratung mit juristischer Präzision und Empathie.",
+  alternates: { canonical: "/ueber-mich" },
+  openGraph: {
+    title: "Über mich – CGK Rechtsanwaltskanzlei Dormagen",
+    description:
+      "Carolin Gerring-Keil, Rechtsanwältin für Erbrecht und Familienrecht in Dormagen. Persönliche Beratung mit juristischer Präzision und Empathie.",
+    url: "/ueber-mich",
+    siteName: "CGK Rechtsanwaltskanzlei",
+    locale: "de_DE",
+    type: "website",
+  },
 };
 
 const werdegang = [
@@ -52,9 +63,31 @@ const buerozeitenRows = [
   { tag: "Freitag", zeit: "9:00 – 13:00 Uhr" },
 ];
 
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Carolin Gerring-Keil",
+  jobTitle: "Rechtsanwältin",
+  worksFor: { "@type": "LegalService", name: "CGK Rechtsanwaltskanzlei" },
+  url: `${SITE_URL}/ueber-mich`,
+  image: `${SITE_URL}/images/carolin-gerring-keil-01.jpeg`,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Mörikestraße 5",
+    addressLocality: "Dormagen",
+    postalCode: "41541",
+    addressCountry: "DE",
+  },
+  alumniOf: "Heinrich-Heine-Universität Düsseldorf",
+};
+
 export default function UeberMichPage() {
   return (
     <div style={{ paddingLeft: "var(--page-x)", paddingRight: "var(--page-x)" }} className="py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       <div className="max-w-[980px] mx-auto">
 
         {/* Intro: Bild links, Text rechts */}

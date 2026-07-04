@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Impressum – CGK Rechtsanwaltskanzlei",
+  description:
+    "Impressum der CGK Rechtsanwaltskanzlei, Rechtsanwältin Carolin Gerring-Keil, Dormagen.",
+  alternates: { canonical: "/impressum" },
 };
 
 const divider = <div style={{ borderTop: "1px solid #e0e0e0", margin: "2.5rem 0" }} />;

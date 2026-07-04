@@ -144,7 +144,7 @@ A `LegalService` JSON-LD schema is injected in `layout.tsx` via `<script type="a
 
 Implemented via `@c15t/nextjs` in **offline mode** (consent stored locally in browser only — no backend, no account, free). See [ConsentManager.tsx](src/components/ConsentManager.tsx).
 
-Categories: `necessary` (always on), `measurement`, `marketing`. No analytics/tracking script is wired up yet — when Google Analytics or similar is added, gate it via the `scripts` option on `ConsentManagerProvider` (see the commented example in `ConsentManager.tsx`), not by adding a separate `<Script>` tag.
+Categories: `necessary` (always on), `measurement`, `marketing`. GA4 + Google Ads conversion tracking are wired up via `@c15t/scripts/google-tag`'s `gtag()` helper on the `scripts` option of `ConsentManagerProvider` (see `ConsentManager.tsx`) — gated behind `NEXT_PUBLIC_GA_ID` (category `measurement`) and `NEXT_PUBLIC_GOOGLE_ADS_ID` (category `marketing`). Both are optional; unset env vars mean an empty `scripts` array and no behavior change. Set real values in Vercel's project environment variables, never commit them. See `.env.example` for the expected format. Don't add a separate `<Script>` tag for analytics — always go through this `scripts` array so consent-gating keeps working.
 
 **Gotchas discovered while integrating (don't relitigate these):**
 - The package's built-in i18n does **not** actually ship German translations in v2.x despite docs claiming 8 languages — only English is bundled. German copy is supplied manually via `i18n.messages.de` in `consent-translations.ts`. If updating banner/dialog copy, edit that file.

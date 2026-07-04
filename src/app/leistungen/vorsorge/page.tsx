@@ -1,10 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Vorsorgevollmacht & Patientenverfügung Dormagen – CGK Rechtsanwaltskanzlei",
   description:
     "Beratung zu Vorsorgevollmacht, Patientenverfügung und Sorgerechtsverfügung in Dormagen – individuell und rechtssicher.",
+  alternates: { canonical: "/leistungen/vorsorge" },
+  openGraph: {
+    title: "Vorsorgevollmacht & Patientenverfügung Dormagen – CGK Rechtsanwaltskanzlei",
+    description:
+      "Beratung zu Vorsorgevollmacht, Patientenverfügung und Sorgerechtsverfügung in Dormagen – individuell und rechtssicher.",
+    url: "/leistungen/vorsorge",
+    siteName: "CGK Rechtsanwaltskanzlei",
+    locale: "de_DE",
+    type: "website",
+  },
 };
 
 const schwerpunkte = [
@@ -44,9 +55,23 @@ const schwerpunkte = [
   },
 ];
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Startseite", item: `${SITE_URL}/` },
+    { "@type": "ListItem", position: 2, name: "Leistungen", item: `${SITE_URL}/leistungen` },
+    { "@type": "ListItem", position: 3, name: "Vorsorge", item: `${SITE_URL}/leistungen/vorsorge` },
+  ],
+};
+
 export default function VorsorgePage() {
   return (
     <div style={{ paddingLeft: "var(--page-x)", paddingRight: "var(--page-x)" }} className="py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="max-w-[980px] mx-auto">
 
         {/* Zurück-Link */}
@@ -94,9 +119,9 @@ export default function VorsorgePage() {
                 }}
                 className="hover:text-[#2C5F3A] transition-colors duration-200 [&::-webkit-details-marker]:hidden"
               >
-                <span style={{ fontSize: "clamp(16px, 1.5vw, 20px)", fontWeight: 400, color: "inherit", letterSpacing: "0.01em" }}>
+                <h3 style={{ margin: 0, fontSize: "clamp(16px, 1.5vw, 20px)", fontWeight: 400, color: "inherit", letterSpacing: "0.01em", textTransform: "none" }}>
                   {s.title}
-                </span>
+                </h3>
                 <span
                   style={{
                     fontSize: "20px",
@@ -134,8 +159,16 @@ export default function VorsorgePage() {
           <div style={{ borderTop: "1px solid #e0e0e0" }} />
         </div>
 
+        <p className="mt-16" style={{ fontSize: "13px", color: "#797979" }}>
+          Mehr zum Ablauf einer{" "}
+          <Link href="/erstberatung" className="hover:text-[#2C5F3A] transition-colors duration-200" style={{ textDecoration: "underline" }}>
+            Erstberatung
+          </Link>
+          .
+        </p>
+
         {/* CTA */}
-        <div className="py-12 px-10 mt-16" style={{ background: "#F8F7F7" }}>
+        <div className="py-12 px-10 mt-6" style={{ background: "#F8F7F7" }}>
           <p className="mb-6" style={{ fontSize: "15px", lineHeight: "26px", maxWidth: "560px" }}>
             Sie möchten frühzeitig Vorsorge treffen und rechtssichere Dokumente
             für den Ernstfall erstellen?

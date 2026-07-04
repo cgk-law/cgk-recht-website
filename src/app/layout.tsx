@@ -4,6 +4,7 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ConsentManager } from "@/components/ConsentManager";
+import { SITE_URL } from "@/lib/site";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -12,13 +13,14 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
-const siteUrl = "https://www.cgk-recht.de";
+const siteUrl = SITE_URL;
 
 export const metadata: Metadata = {
   title: "Erbrecht & Familienrecht Dormagen – CGK Rechtsanwaltskanzlei",
   description:
     "Rechtsanwältin Carolin Gerring-Keil berät Sie in Dormagen individuell im Erb- und Familienrecht. Transparent, persönlich und rechtssicher.",
   metadataBase: new URL(siteUrl),
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Erbrecht & Familienrecht Dormagen – CGK Rechtsanwaltskanzlei",
     description:
@@ -27,6 +29,12 @@ export const metadata: Metadata = {
     siteName: "CGK Rechtsanwaltskanzlei",
     locale: "de_DE",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Erbrecht & Familienrecht Dormagen – CGK Rechtsanwaltskanzlei",
+    description:
+      "Rechtsanwältin Carolin Gerring-Keil berät Sie in Dormagen individuell im Erb- und Familienrecht. Transparent, persönlich und rechtssicher.",
   },
 };
 

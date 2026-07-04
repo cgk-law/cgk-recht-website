@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Datenschutz – CGK Rechtsanwaltskanzlei",
+  description:
+    "Datenschutzerklärung der CGK Rechtsanwaltskanzlei – Informationen zur Verarbeitung personenbezogener Daten.",
+  alternates: { canonical: "/datenschutz" },
 };
 
 export default function DatenschutzPage() {

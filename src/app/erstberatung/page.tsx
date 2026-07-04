@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   title: "Erstberatung – CGK Rechtsanwaltskanzlei Dormagen",
   description:
     "Erstberatung im Erbrecht & Familienrecht in Dormagen. Persönlich in der Kanzlei oder per Videokonferenz über Microsoft Teams. Jetzt Termin vereinbaren.",
+  alternates: { canonical: "/erstberatung" },
+  openGraph: {
+    title: "Erstberatung – CGK Rechtsanwaltskanzlei Dormagen",
+    description:
+      "Erstberatung im Erbrecht & Familienrecht in Dormagen. Persönlich in der Kanzlei oder per Videokonferenz über Microsoft Teams. Jetzt Termin vereinbaren.",
+    url: "/erstberatung",
+    siteName: "CGK Rechtsanwaltskanzlei",
+    locale: "de_DE",
+    type: "website",
+  },
 };
 
 const steps = [
@@ -54,9 +64,23 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.frage,
+    acceptedAnswer: { "@type": "Answer", text: f.antwort },
+  })),
+};
+
 export default function ErstberatungPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Page Header */}
       <section
         className="py-20"
@@ -220,6 +244,20 @@ export default function ErstberatungPage() {
               </div>
             ))}
           </div>
+          <p className="mt-16" style={{ fontSize: "13px", color: "#797979" }}>
+            Mehr zu unseren Rechtsgebieten:{" "}
+            <Link href="/leistungen/erbrecht" className="hover:text-[#2C5F3A] transition-colors duration-200" style={{ textDecoration: "underline" }}>
+              Erbrecht
+            </Link>
+            {" · "}
+            <Link href="/leistungen/familienrecht" className="hover:text-[#2C5F3A] transition-colors duration-200" style={{ textDecoration: "underline" }}>
+              Familienrecht
+            </Link>
+            {" · "}
+            <Link href="/leistungen/vorsorge" className="hover:text-[#2C5F3A] transition-colors duration-200" style={{ textDecoration: "underline" }}>
+              Vorsorge
+            </Link>
+          </p>
         </div>
       </section>
 

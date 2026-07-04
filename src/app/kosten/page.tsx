@@ -5,6 +5,16 @@ export const metadata: Metadata = {
   title: "Kosten & Honorar – CGK Rechtsanwaltskanzlei Dormagen",
   description:
     "Transparente Honorare im Erbrecht & Familienrecht. Vergütungsvereinbarung, keine versteckten Kosten. Kostenschätzung vorab.",
+  alternates: { canonical: "/kosten" },
+  openGraph: {
+    title: "Kosten & Honorar – CGK Rechtsanwaltskanzlei Dormagen",
+    description:
+      "Transparente Honorare im Erbrecht & Familienrecht. Vergütungsvereinbarung, keine versteckten Kosten. Kostenschätzung vorab.",
+    url: "/kosten",
+    siteName: "CGK Rechtsanwaltskanzlei",
+    locale: "de_DE",
+    type: "website",
+  },
 };
 
 const vorteile = [

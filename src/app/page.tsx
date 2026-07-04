@@ -1,5 +1,19 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Erbrecht & Familienrecht Dormagen – CGK Rechtsanwaltskanzlei",
+    description:
+      "Rechtsanwältin Carolin Gerring-Keil berät Sie in Dormagen individuell im Erb- und Familienrecht. Transparent, persönlich und rechtssicher.",
+    url: "/",
+    siteName: "CGK Rechtsanwaltskanzlei",
+    locale: "de_DE",
+    type: "website",
+  },
+};
 
 const quickLinks = [
   {
@@ -73,7 +87,7 @@ export default function Startseite() {
               letterSpacing: "0.2em",
               textTransform: "uppercase",
               fontWeight: 500,
-              marginBottom: "2rem",
+              marginBottom: "4rem",
             }}
           >
             Rechtsanwältin • Kanzleiinhaberin
@@ -196,7 +210,18 @@ export default function Startseite() {
                 0{i + 1}
               </span>
               <div>
-                <h2 className="mb-2">{item.label}</h2>
+                <h3
+                  className="mb-2"
+                  style={{
+                    fontSize: "17px",
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.08em",
+                    lineHeight: "1.4em",
+                  }}
+                >
+                  {item.label}
+                </h3>
                 <p style={{ fontSize: "15px", lineHeight: "26px", color: "#797979", maxWidth: "520px" }}>
                   {item.desc}
                 </p>
@@ -288,7 +313,19 @@ export default function Startseite() {
                 <p style={{ fontSize: "12px", color: "#b0b0b0", letterSpacing: "0.15em", fontWeight: 500, marginBottom: "0.75rem" }}>
                   {item.step}
                 </p>
-                <h2 style={{ marginBottom: "0.75rem", position: "relative" }}>{item.title}</h2>
+                <h3
+                  style={{
+                    marginBottom: "0.75rem",
+                    position: "relative",
+                    fontSize: "17px",
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.08em",
+                    lineHeight: "1.4em",
+                  }}
+                >
+                  {item.title}
+                </h3>
                 <p style={{ fontSize: "15px", lineHeight: "26px", color: "#797979", fontWeight: 300, position: "relative" }}>
                   {item.desc}
                 </p>

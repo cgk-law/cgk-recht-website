@@ -1,10 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Leistungen – CGK Rechtsanwaltskanzlei Dormagen",
   description:
     "Beratung und Vertretung im Erbrecht und Familienrecht in Dormagen. Testamente, Erbverträge, Scheidungsfolgen, Vorsorgevollmacht und mehr.",
+  alternates: { canonical: "/leistungen" },
+  openGraph: {
+    title: "Leistungen – CGK Rechtsanwaltskanzlei Dormagen",
+    description:
+      "Beratung und Vertretung im Erbrecht und Familienrecht in Dormagen. Testamente, Erbverträge, Scheidungsfolgen, Vorsorgevollmacht und mehr.",
+    url: "/leistungen",
+    siteName: "CGK Rechtsanwaltskanzlei",
+    locale: "de_DE",
+    type: "website",
+  },
 };
 
 const bereiche = [
@@ -40,9 +51,22 @@ const unterstuetzung = [
   },
 ];
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Startseite", item: `${SITE_URL}/` },
+    { "@type": "ListItem", position: 2, name: "Leistungen", item: `${SITE_URL}/leistungen` },
+  ],
+};
+
 export default function LeistungenPage() {
   return (
     <div style={{ paddingLeft: "var(--page-x)", paddingRight: "var(--page-x)" }} className="py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="max-w-[980px] mx-auto">
         <h1>Leistungen</h1>
         <p className="mb-16" style={{ maxWidth: "640px" }}>
